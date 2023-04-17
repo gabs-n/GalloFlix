@@ -1,0 +1,34 @@
+cd desktop
+
+git config --global user.name "gabi"
+
+git config --global user.email "nicoletigabriela2@gmail.com"
+
+git clone https://github.com/gabs-n/GalloFlix.git
+
+/* Apenas caso vc não tenha criado o GitIgnore no Repositório */ já
+dotnet new gitignore
+
+dotnet new sln --name GalloFlix
+
+dotnet new mvc --name GalloFlix -f Net6.0
+
+
+ou 
+
+dotnet new mvc -f net6.0 -o GalloFlix
+
+dotnet sln add GalloFlix\GalloFlix.csproj
+
+git add .
+
+git commit -m "Criada a solução e o projeto MVC GalloFlix"
+
+git push (empurrar)
+
+git pull (puxar)
+
+dotnet watch run --project GalloFlix\GalloFlix.csproj
+
+/* Apos acessar a pasta do projeto no terminal */
+dotnet watch run
