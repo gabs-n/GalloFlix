@@ -8,7 +8,7 @@ public class Genre
 {
     [Key]
     // ou [DatabaseGenerated(DatabaseGeneratedOption.Identity)] e None pra nao criar sozinho 
-    public int Id { get; set; }
+    public byte Id { get; set; }
 
     [Display(Name = "Nome")]
     // Name: titulo e prompt: placeholder
