@@ -1,5 +1,5 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GalloFlix.Models;
 
@@ -7,12 +7,11 @@ namespace GalloFlix.Models;
 public class Genre
 {
     [Key]
-    // ou [DatabaseGenerated(DatabaseGeneratedOption.Identity)] e None pra nao criar sozinho 
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public byte Id { get; set; }
 
     [Display(Name = "Nome")]
-    // Name: titulo e prompt: placeholder
-    [Required(ErrorMessage = "O Nome do Gênero é obrigatório!")]
-    [StringLength(30, ErrorMessage = "O nome deve possuir no máximo 30 caracteres")]
+    [Required(ErrorMessage = "O Nome é obrigatório")]
+    [StringLength(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
     public string Name { get; set; }
 }
