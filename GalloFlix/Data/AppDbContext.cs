@@ -12,4 +12,38 @@ public class AppDbContext : IdentityDbContext
     }
 
     public DbSet<AppUser> AppUsers { get; set; }
+    public DbSet<Genre> Genres { get; set; }
+    public DbSet<Movie> Movies { get; set; }
+    public DbSet<MovieComment> MovieComments { get; set; }
+    public DbSet<MovieGenre> MovieGenres { get; set; }
+    public DbSet<MovieRating> MovieRatings { get; set; }
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+        
+        //FluentAPI
+        //tabela de usuario
+        builder.Entity<IdentityUser>(b => {
+            b.ToTable("Users");
+        });
+        builder.Entity<IdentityUserClaim<string>>(b => {
+            b.ToTable("UserClaims");
+        });
+        builder.Entity<IdentityUserLogin<string>>(b => {
+            b.ToTable("UserLogins");
+        });
+        builder.Entity<IdentityUserToken<string>>(b => {
+            b.ToTable("UserTokens");
+        });
+        //tabela do perfil
+        builder.Entity<IdentityRole>(b => {
+            b.ToTable("Roles");
+        });
+        builder.Entity<IdentityRoleClaim<string>>(b => {
+            b.ToTable("RoleClaims");
+        });
+        builder.Entity<IdentityUserRole<string>>(b => {
+            b.ToTable("UserRoles");
+        });
+    }
 }

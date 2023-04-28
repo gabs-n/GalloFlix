@@ -13,7 +13,7 @@ public class MovieComment
     [Required]
     public int MovieId { get; set; }
     [ForeignKey("MovieId")]
-    public Movie Movie { get; set; }
+    public Movie Movie { get; set; } // propriedade de navegacao
 
     [Required]
     public string UserId { get; set; }
