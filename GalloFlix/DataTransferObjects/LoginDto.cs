@@ -8,6 +8,7 @@ public class LoginDto
     public string Email { get; set; }
     [Display(Name = "Senha de Acesso")]
     [Required(ErrorMessage = "Por favor, insira sua senha")]
+    [DataType(DataType.Password)]
     public string Password { get; set; }
     [Display(Name = "Manter Conectado?")]
     public bool RememberMe { get; set; }
