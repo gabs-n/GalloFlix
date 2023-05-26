@@ -1,3 +1,4 @@
+using System.Net.Mail;
 using GalloFlix.DataTransferObjects;
 using GalloFlix.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -27,6 +28,7 @@ public class AccountController : Controller
     {
         return View();
     }
+
     [HttpGet]
     [AllowAnonymous]
     public IActionResult Login(string returnUrl)
@@ -42,8 +44,15 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
+            string userName = login.Email;
+            if(IsValidEmail(login.Email))
+            {
+                var user = await _userManager.FindByEmailAsync(login.Email);
+                if (user != null)
+                    userName = user.UserName;
+            }
             var result = await _signInManager.PasswordSignInAsync(
-                login.Email, login.Password, login.RememberMe, true
+                userName, login.Password, login.RememberMe, true
             );
             if(result.Succeeded)
             {
@@ -58,5 +67,18 @@ public class AccountController : Controller
             ModelState.AddModelError("login", "Usuário e/ou senha inválidos!!!");
         }
         return View(login);
+    }
+
+    private bool IsValidEmail(string email)
+    {
+        try
+        {
+            MailAddress m = new(email);
+            return true;
+        }
+        catch (FormatException)
+        {
+            return false;
+        }
     }
 }
