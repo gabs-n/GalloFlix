@@ -80,11 +80,22 @@ public class AccountController : Controller
 
     [HttpGet]
     [AllowAnonymous]
-
     public IActionResult Register()
     {
         return View();
     }
+
+    [HttpPost]
+    [AllowAnonymous]
+    public async Task<IActionResult> Register(RegisterDto register)
+    {
+        if(ModelState.IsValid)
+        {
+            
+        }
+        return View(register);
+    }
+
     private bool IsValidEmail(string email)
     {
         try
