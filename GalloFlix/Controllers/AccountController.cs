@@ -106,23 +106,25 @@ public class AccountController : Controller
             var user = Activator.CreateInstance<AppUser>();
 
             user.Name = register.Name;
-            user.DataofBirth = register.DataofBirth;
+            user.DateOfBirth = register.DateOfBirth;
             user.Email = register.Email;
 
-            await _userStore.SetUserNameAsync (
-                user, register.Email, CancellationToken.None);
-            await _emailSender.SetEmailAsync(
-                user, register.Email, CancellationToken.None);
+            await _userStore.SetUserNameAsync(
+                user, register.Email, CancellationToken.None
+            );
+            await _emailStore.SetEmailAsync(
+                user, register.Email, CancellationToken.None
+            );
             
             var result = await _userManager.CreateAsync(user, register.Password);
 
             if(result.Succeeded)
             {
-                _looger.LogInformation($"Novo usuário registrado com o email {user.Email}");
+                _logger.LogInformation($"Novo usuário registrado com o email {user.Email}");
                 
                 var userId = await _userManager.GetUserIdAsync(user);
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                code = WebEncoder.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                 var callbackUrl = Url.Action(
                     "ConfirmEmail", "Account", new { userId = userId, code = code },
                     protocol: Request.Scheme
