@@ -1,0 +1,26 @@
+1. Padrão MVC (Model-View-Controller):
+O padrão MVC é uma abordagem arquitetural que separa a aplicação em três componentes principais: o Modelo (Model), a Visualização (View) e o Controlador (Controller). 
+O modelo representa os dados e a lógica de negócio, a visualização exibe a interface do usuário e o controlador gerencia a interação entre o modelo e a visualização. 
+O ASP.NET oferece suporte nativo ao MVC e facilita a criação de aplicativos web estruturados e de fácil manutenção.
+
+2. Programação de Interfaces na Programação Orientada a Objetos:
+A programação de interfaces na Programação Orientada a Objetos (POO) refere-se à definição de contratos ou especificações para classes. Uma interface define um conjunto 
+de métodos e propriedades que uma classe deve implementar. As interfaces fornecem um mecanismo para alcançar o polimorfismo, permitindo que diferentes objetos sejam tratados 
+de maneira uniforme quando implementam a mesma interface.
+
+3. POO - Criação de Classes e Objetos:
+Na POO, as classes são modelos ou planos para criar objetos. Elas definem os atributos (dados) e comportamentos (métodos) que os objetos terão. Os objetos são instâncias das classes, ou seja, são criados a partir das classes. Por exemplo, uma classe "Carro" pode ter atributos como "modelo" e "cor" e métodos como "ligar" e "acelerar". Um objeto "Carro" seria uma instância dessa classe com valores específicos para os atributos.
+
+4. POO - Modificadores de Acesso ou Visibilidade:
+Os modificadores de acesso são palavras-chave usadas para controlar a visibilidade dos membros (atributos, métodos, propriedades) de uma classe. Os modificadores de acesso no C# incluem:
+   - Public: O membro é acessível em qualquer lugar.
+   - Private: O membro é acessível apenas dentro da própria classe.
+   - Protected: O membro é acessível dentro da própria classe e em classes derivadas.
+   - Internal: O membro é acessível dentro do mesmo assembly.
+   - Protected Internal: O membro é acessível dentro do mesmo assembly e em classes derivadas, mesmo que estejam em assemblies diferentes.
+
+5. Pacotes de Programação ASP.NET, download e uso:
+Os pacotes de programação ASP.NET são bibliotecas e componentes que podem ser adicionados a um projeto ASP.NET para estender sua funcionalidade. Os pacotes são distribuídos como pacotes NuGet, que podem ser baixados e instalados em um projeto. O NuGet é um gerenciador de pacotes para o ecossistema .NET, permitindo que você baixe e gerencie dependências externas de forma fácil e automática.
+
+6. Pacotes de Conexão a Banco de Dados:
+Os pacotes de conexão a bancos de dados no ASP.NET permitem que você se conecte e interaja com diferentes sistemas de gerenciamento de banco de dados. Alguns exemplos de pacotes populares incluem o Entity Framework (EF), Dapper e ADO.NET. Esses pacotes fornecem abstrações e APIs para facilitar a comunicação com bancos
