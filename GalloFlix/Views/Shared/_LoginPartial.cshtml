@@ -7,12 +7,13 @@
     {
         <li class="nav-item">
             <a asp-controller="Account" asp-action="Profile" class="nav-link"
-                title="Gerenciar minha conta">
+                title="Gerenciar minha Conta">
                 Olá @User.Identity?.Name!
             </a>
         </li>
         <li class="nav-item">
-            <form class="form-inline" asp-controller="Account" asp-action="Logout">
+            <form class="form-inline" asp-controller="Account"
+                asp-action="Logout">
                 <button type="submit" class="nav-link btn btn-link">
                     Sair
                 </button>
@@ -23,9 +24,8 @@
     {
         <li class="nav-item">
             <a asp-controller="Account" asp-action="Login" class="nav-link">
-                Login    
+                Login
             </a>
         </li>
     }
-
 </ul>

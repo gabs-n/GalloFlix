@@ -4,27 +4,26 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace GalloFlix.Data;
-
-public class AppDbContext : IdentityDbContext 
+public class AppDbContext : IdentityDbContext
 {
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
 
     public DbSet<AppUser> AppUsers { get; set; }
-    public DbSet<Genre> Genres { get; set; }
+    public DbSet<Genre> Genres { get; set;}
     public DbSet<Movie> Movies { get; set; }
-    public DbSet<MovieComment> MovieComments { get; set; }
+    public DbSet<MovieComment> MovieComments { get; set; } 
     public DbSet<MovieGenre> MovieGenres { get; set; }
-    public DbSet<MovieRating> MovieRatings { get; set; }
-    protected override void OnModelCreating(ModelBuilder builder)
+    public DbSet<MovieRating> MovieRating { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder) //void não tem retorno
     {
         base.OnModelCreating(builder);
         AppDbSeed appDbSeed = new(builder);
-        
+
         //FluentAPI
-        //tabela de usuario
-        #region Personalização do identity
+        #region Personalização do Identity
         builder.Entity<IdentityUser>(b => {
             b.ToTable("Users");
         });
@@ -37,7 +36,6 @@ public class AppDbContext : IdentityDbContext
         builder.Entity<IdentityUserToken<string>>(b => {
             b.ToTable("UserTokens");
         });
-        //tabela do perfil
         builder.Entity<IdentityRole>(b => {
             b.ToTable("Roles");
         });
@@ -49,7 +47,7 @@ public class AppDbContext : IdentityDbContext
         });
         #endregion
 
-        #region Many To Many - MovieComment 
+        #region Many To Many - MovieComment
         builder.Entity<MovieComment>()
             .HasOne(mc => mc.Movie)
             .WithMany(m => m.Comments)
@@ -62,9 +60,10 @@ public class AppDbContext : IdentityDbContext
         #endregion
 
         #region Many To Many - MovieGenre
-        //Definição de Chave Primária Composta
-        builder.Entity<MovieGenre>()
-            .HasKey(mg => new {mg.MovieId, mg.GenreId});
+        // Definição de Chave Primária Composta
+        builder.Entity<MovieGenre>().HasKey(
+            mg => new { mg.MovieId, mg.GenreId }
+        );
 
         builder.Entity<MovieGenre>()
             .HasOne(mg => mg.Movie)
@@ -77,10 +76,11 @@ public class AppDbContext : IdentityDbContext
             .HasForeignKey(mg => mg.GenreId);
         #endregion
 
-        #region Many To Many - MovieRatiing
-        builder.Entity<MovieRating>()
-            .HasKey(mr => new{mr.MovieId, mr.UserId});
-        
+        #region Many To Many - MovieRating
+        builder.Entity<MovieRating>().HasKey(
+            mr => new { mr.MovieId, mr.UserId }
+        );
+
         builder.Entity<MovieRating>()
             .HasOne(mr => mr.Movie)
             .WithMany(m => m.Ratings)
@@ -91,6 +91,5 @@ public class AppDbContext : IdentityDbContext
             .WithMany(u => u.Ratings)
             .HasForeignKey(mr => mr.UserId);
         #endregion
-
     }
 }

@@ -172,24 +172,24 @@ namespace GalloFlix.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "317cc880-1876-4471-a323-415f1ad5c127",
-                            ConcurrencyStamp = "a2fde88f-03d4-4c2e-91c3-494283b5c44e",
+                            Id = "2ffe9ecc-aa77-4cc5-be00-8586c9a54c63",
+                            ConcurrencyStamp = "1b8a45f7-dece-4e5d-a77d-eb4aa6456dfa",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "466edf8f-37cb-4c5d-b0d2-53fb6921d856",
-                            ConcurrencyStamp = "eaa976a5-c9ed-4161-b44d-9faaa78fcd25",
+                            Id = "86ea38aa-6985-41e0-975f-2272a4a6c187",
+                            ConcurrencyStamp = "d8a9a321-acc5-4d7f-9739-0e79955fffff",
                             Name = "Moderador",
                             NormalizedName = "MODERADOR"
                         },
                         new
                         {
-                            Id = "c1c090e5-f11c-4d79-ab0f-4a4425a20608",
-                            ConcurrencyStamp = "78276460-b6d3-450d-9199-d24db4de3878",
+                            Id = "a6bdc5fe-98a4-4f4d-b08c-8dd8b04baa1f",
+                            ConcurrencyStamp = "87f41719-91ff-4edb-a2bd-55f11f7263b7",
                             Name = "Usuário",
-                            NormalizedName = "USUARIO"
+                            NormalizedName = " USUÁRIO"
                         });
                 });
 
@@ -348,8 +348,8 @@ namespace GalloFlix.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "e125e019-9e54-42d2-b216-5d384d455bf6",
-                            RoleId = "317cc880-1876-4471-a323-415f1ad5c127"
+                            UserId = "bde8829e-0579-4dad-a028-69be8a72351f",
+                            RoleId = "2ffe9ecc-aa77-4cc5-be00-8586c9a54c63"
                         });
                 });
 
@@ -393,22 +393,22 @@ namespace GalloFlix.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e125e019-9e54-42d2-b216-5d384d455bf6",
+                            Id = "bde8829e-0579-4dad-a028-69be8a72351f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bd9a8305-0edb-4bd7-8f8f-be6c2968c4d1",
-                            Email = "nicoletigabriela2@gmail.com",
+                            ConcurrencyStamp = "2757a280-470e-4a4a-bb48-4bb0dd5e1143",
+                            Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "NICOLETIGABRIELA2@GMAIL.COM",
-                            NormalizedUserName = "BIBIELA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFly8V4NDDwDBBoRVtWQWJ4spXk69bKx/OHvXPHH2jaVaBo1r8uMWgyTK1rW9vBWjg==",
-                            PhoneNumber = "14996664815",
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFGCbCXTkaUXjhDPc21Bv7EZ9/TTFK5/5fuIyXS4IoNf2Bpaq5cuafvezw9RwMHZVg==",
+                            PhoneNumber = "14912345678",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "36c17f20-d297-47f1-81c9-0f2c20ab48f9",
+                            SecurityStamp = "0883fd1e-7425-4ac5-8910-763f708c8c29",
                             TwoFactorEnabled = false,
-                            UserName = "Bibiela",
-                            DateOfBirth = new DateTime(2005, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Gabriela Ferreira Nicoleti",
+                            UserName = "Admin",
+                            DateOfBirth = new DateTime(2005, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Seu Nome Completo",
                             ProfilePicture = "/img/users/avatar.png"
                         });
                 });

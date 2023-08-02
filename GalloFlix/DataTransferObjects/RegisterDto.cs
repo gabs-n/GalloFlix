@@ -1,20 +1,21 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace GalloFlix.DataTransferObjects;
+
 public class RegisterDto
 {
     [Display(Name = "Nome Completo")]
-    [Required(ErrorMessage = "Por favor, informe seu Nome")]
-    [StringLength(60, ErrorMessage = "O Nome deve possuir no máximo 60 caracteres")]
+    [Required(ErrorMessage = "Por favor, informe seu nome")]
+    [StringLength(60, ErrorMessage = "O nome deve possuir no máximo 60 caracteres")]
     public string Name { get; set; }
 
     [DataType(DataType.Date)]
     [Display(Name = "Data de Nascimento")]
-    [Required(ErrorMessage ="Por favor, informe sua Data de Nascimento")]
+    [Required(ErrorMessage = "Por favor, informe sua Data de Nascimento")]
     public DateTime DateOfBirth { get; set; }
 
     [Required(ErrorMessage = "Por favor, informe seu Email")]
-    [EmailAddress(ErrorMessage = "Por favor, informe um Email válido")]
+    [EmailAddress(ErrorMessage = "Por favor, informe um Email Válido!")]
     [StringLength(100, ErrorMessage = "O Email deve possuir no máximo 100 caracteres")]
     public string Email { get; set; }
 
