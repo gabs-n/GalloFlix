@@ -50,11 +50,12 @@
                         </a>
                     </li>
                     <li>
-                        <a asp-action="Index" asp-controller="Genres" class="nav-link @(ViewBag.Title == "Genêros" ? "active" : "link-body-emphasis")">
+                        <a asp-action="Index" asp-controller="Genres" class="nav-link @(ViewBag.Title == "Gêneros" ? "active" : "link-body-emphasis")">
                             <i class="bi bi-list-stars me-2"></i>
-                            Genêros
+                            Gêneros
                         </a>
-                    </li>                    <li>
+                    </li>
+                    <li>
                         <a href="#" class="nav-link @(ViewBag.Title == "Usuários" ? "active" : "link-body-emphasis")">
                             <i class="bi bi-people-fill me-2"></i>
                             Usuários
@@ -105,7 +106,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </nav>
-                <div class="container-fluid p-5 pt-3">
+                <div class="container-fluid p-3">
                     @RenderBody()
                 </div>
             </div>
